@@ -1,0 +1,28 @@
+.controls
+{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 5px;
+}
+.body
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 40px;
+}
+.readonly
+{
+    grid-template-columns: 1fr;
+}
+.edit-item:first-child
+{
+    margin-top: 2px;
+}
+.edit-item
+{
+    margin-bottom: 2px;
+}

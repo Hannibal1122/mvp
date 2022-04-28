@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body
+{
+    font-family: "Roboto"; 
+    font-weight: 400; 
+    margin: 0;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+button, input[type = text]
+{
+    border: 1px solid #ccc;;
+    background-color: white;
+    border-radius: 4px;
+    height: 30px;
+    cursor: pointer;
+    color: inherit;
+    transition: 0.3s;
+}
+button:hover
+{
+    background-color: rgb(241, 241, 241);
+}

@@ -1,0 +1,31 @@
+<div class = "controls">
+    <div>
+        <label><input type = "checkbox" [(ngModel)] = "readonly"> readonly</label>
+    </div>
+    <!-- Место для дополнительных кнопок -->
+</div>
+<div
+    class = "body"
+    [class.readonly] = "readonly">
+    <app-table
+        style = "overflow: auto; margin-left: 4px; margin-right: 4px;"
+        (onEdit) = "openRowEdit($event)"
+        (onRemove) = "removeRow($event)"
+        [readonly] = "readonly"
+        [header] = "header"
+        [data] = "viewData">
+    </app-table>
+    <div
+        *ngIf = "!readonly"
+        style = "padding: 4px;">
+        <table>
+            <tr *ngFor = "let item of newRow">
+                <td>{{ item.name }}: </td>
+                <td><input [(ngModel)] = "item.value"></td>
+            </tr>
+        </table>
+        <button *ngIf = "mode == 'insert'" (click) = "insertNewRow()">Добавить</button>
+        <button *ngIf = "mode == 'update'" (click) = "updateNewRow()">Изменить</button>
+        <button (click) = "cancelNewRow()" style = "margin-left: 5px;">Отменить</button>
+    </div>
+</div>
